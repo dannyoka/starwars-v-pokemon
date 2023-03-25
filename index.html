@@ -4,9 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Star Wars V. Pokemon</title>
   </head>
   <body>
+    <nav
+      class="navbar has-text-light has-background-dark"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">Star Wars V. Pokemon</div>
+      <div class="hero-box">
+        Have you always wanted to be the very best, like no one ever was? Or do
+        you want to have the force be with you?
+      </div>
+    </nav>
     <h1>Star Wars V. Pokemon</h1>
+    <div class="columns">
+      <div class="column is-centered">
+        <div class="col-title">Choose a Star Wars Character</div>
+        <button class="button is-primary" id="star-wars-shuffle-btn">
+          Shuffle
+        </button>
+        <div id="star-wars-char-container"></div>
+        <button id="star-wars-vote-btn" class="button is-info">Vote</button>
+      </div>
+      <div class="column is-centered">
+        <div class="col-title">Choose a Pokemon</div>
+        <button class="button is-primary" id="pokemon-shuffle-btn">
+          Shuffle
+        </button>
+        <div id="pokemon-char-container"></div>
+        <button class="button is-info" id="pokemon-vote-btn">Vote</button>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
