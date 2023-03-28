@@ -12,3 +12,5 @@ Branch protection test
 
 Branch protection test 2
 Branch test 3
+
+I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
