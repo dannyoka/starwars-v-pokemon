@@ -11,3 +11,4 @@ Eriks comments here!
 Branch protection test
 
 Branch protection test 2
+Branch test 3
