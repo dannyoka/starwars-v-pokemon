@@ -6,9 +6,31 @@ var pokemonCharContainer = document.querySelector("#pokemon-char-container");
 var pokemonVoteBtn = document.querySelector("#pokemon-vote-btn");
 
 var SWAPI_URL = "https://swapi.dev/api/people/";
-var SWAPI_COUNT = 82;
+var SWAPI_COUNT = null;
 var POKEAPI_URL = "https://pokeapi.co/api/v2/pokemon/";
-var POKEMON_COUNT = 1281;
+var POKEMON_COUNT = null;
+
+function getStarWarsCharacterCount() {
+  fetch(SWAPI_URL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      SWAPI_COUNT = data.count;
+      console.log(SWAPI_COUNT);
+    });
+}
+
+function getPokemonCount() {
+  fetch(POKEAPI_URL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      POKEMON_COUNT = data.count;
+      console.log(POKEMON_COUNT);
+    });
+}
 
 function generateRandomNumber(num) {
   return Math.ceil(num * Math.random());
@@ -67,15 +89,18 @@ function renderPokemon(pokemon) {
 }
 
 starWarsShuffleBtn.addEventListener("click", function () {
-  var randomNumber = generateRandomNumber(SWAPI_COUNT);
+  var randomNumber = generateRandomNumber(SWAPI_COUNT || 82);
   fetchResource(SWAPI_URL, randomNumber, renderStarWarsCharacter);
 });
 
 starWarsVoteBtn.addEventListener("click", handleVote);
 
 pokemonShuffleBtn.addEventListener("click", function () {
-  var randomNumber = generateRandomNumber(POKEMON_COUNT);
+  var randomNumber = generateRandomNumber(POKEMON_COUNT || 1281);
   fetchResource(POKEAPI_URL, randomNumber, renderPokemon);
 });
 
 pokemonVoteBtn.addEventListener("click", handleVote);
+
+getPokemonCount();
+getStarWarsCharacterCount();
